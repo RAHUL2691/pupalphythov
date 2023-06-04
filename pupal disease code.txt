@@ -1,0 +1,29 @@
+print("do you have following smyptoms? yes/no")
+# Get input from user on symptoms
+sudden = input("Do you experience sudden, intense, and throbbing pain? (Y/N) ").lower() == "y"
+dull = input("Do you experience dull and achy pain? (Y/N) ").lower() == "y"
+sweet = input("Do you experience sensitivity to sweet foods or drinks? (Y/N) ").lower() == "y"
+cold_short = input("Do you experience sensitivity to cold that lasts only a few seconds? (Y/N) ").lower() == "y"
+cold_long = input("Do you experience sensitivity to cold that lasts more than 30 seconds? (Y/N) ").lower() == "y"
+heat = input("Do you experience sensitivity to heat? (Y/N) ").lower() == "y"
+tap = input("Do you experience pain when the tooth is tapped? (Y/N) ").lower() == "y"
+swelling = input("Do you experience swelling around the tooth and gums? (Y/N) ").lower() == "y"
+fever = input("Do you have a fever? (Y/N) ").lower() == "y"
+bad_breath = input("Do you have bad breath? (Y/N) ").lower() == "y"
+moves = input("Do you experience pain that moves and have trouble finding which tooth is causing the pain? (Y/N) ").lower() == "y"
+jaw = input("Do you experience severe, constant, throbbing toothache that can spread to your jawbone, neck or ear? (Y/N) ").lower() == "y"
+pressure = input("Do you experience pain or discomfort with hot and cold temperatures or the pressure of chewing or biting? (Y/N) ").lower() == "y"
+discoloured = input("Is your tooth discoloured? (Y/N) ").lower() == "y"
+biting = input("Did you bite down on something hard or experience an injury to your mouth or tooth? (Y/N) ").lower() == "y"
+
+# Check for symptoms and diagnose tooth pain
+if (sudden or dull) and sweet and not cold_long and not heat and not tap:
+    print("Reversible pulpitis")
+elif (sudden or dull) and (cold_long or heat or tap) and not swelling and not fever and not bad_breath and not moves:
+    print("Irreversible pulpitis")
+elif jaw or pressure or discoloured:
+    print("Periapical abscess")
+elif biting:
+    print("Cracked tooth")
+else:
+    print("Unable to diagnose tooth pain based on symptoms provided")
